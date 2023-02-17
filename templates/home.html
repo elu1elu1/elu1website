@@ -1,53 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Consulting Careers</title>
+    <title>{{company_name}}</title>
+    <meta charset="utf-8">
+    <meta name="viewpoit" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
-      h1 {
-        font_size: 40px;
-        font-family: Roboto;
-        font-weight: normal;
-        color: rgb(50, 50, 50);
-        text-align: center;
-      }
-
       #banner {
-        width: 100%;
         height: 360px;
+        width: 100%;
         object-fit: cover;
-      }
-      h2 {
-        font_size: 32px;
-        font-family: Roboto;
-        font-weight: normal;
-        color: rgb(100, 100, 100);
-        text-align: center;
-      }
-
-      .bodytext {
-        font-family: Roboto;
-        color: rgb(80, 80, 80)
-      }
-
-      #container {
-        max-width: 720px;
-        margin: 0 auto 0 auto;
       }
     </style>
   </head>
   <body>
-    <div id="container">
-      <h1>Consulting Service</h1>
-      <img id="banner" src= "https://elu1website.edlu1.repl.co/static/banner.jpg">
-      <h2>About</h2>
-      <p class="bodytext">
+    <div class="container">
+      <h1 class="text-center mt-2 mb-4">{{company_name}} Consulting</h1>
+      <img class="img-fluid" id="banner" src= "https://elu1website.edlu1.repl.co/static/banner.jpg">
+      <h2 class="text-center mt-2 mb-4">About {{company_name}}</h2>
+      <p class="lead">
 Actively pursuing the goal of providing a valuable service to the biomanufacturing industry by leveraging the power of machine learning. The aim is to develop cutting-edge algorithms and models that can be applied to biomanufacturing processes, allowing for more accurate and efficient production of various biomolecules. Through extensive research and development, the service intend to create a platform that can analyze large amounts of data generated during biomanufacturing and use it to optimize the process in real-time. By utilizing machine learning, the service hope to enable the industry to produce high-quality biomolecules at a lower cost and with greater efficiency, ultimately benefiting both the industry and society as a whole.
       </p>
-      <h2>Experience and Expertise</h2>
-      <p class="bodytext">TODO - show the content</p>
-      <div style="text-align:center;">
-      <button>Contact Us</button>
-        <p>Copyright 2023, Consulting Service</p>
+      <h2 class="text-center mt-2 mb-4">Experience and Expertise</h2>
+      <p>TODO - Show the Experience and Experties </p>
+      <h2 class="text-center mt-2 mb-4">Open Postions</h2>
+      <div>
+        {% for job in jobs %}
+        {% include 'jobitems.html' %}
+        {% endfor %}
+      </div>
+      <div class="text-center">
+      <button class="btn btn-primary btn-lg">Contact Us</button>
+        <p class="mt-4">Copyright 2023, {{company_name}}</p>
       </dive
     </div>
   </body>
